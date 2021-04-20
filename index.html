@@ -1,1 +1,34 @@
-JavaScript課題3取り掛かります。
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"> 
+    <title>JavaScript3-1</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>ToDoリスト</h1>
+    <form name="form1">
+      <input type="radio" name="select" value="all" checked="checked">すべて
+      <input type="radio" name="select" value="working">作業中
+      <input type="radio" name="select" value="done">完了
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>コメント</th>
+          <th>状態</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <h2>新規タスクの追加</h2>
+    <form name="form2">
+      <input type="text" id="txt">
+      <input type="button" id="add" value="追加"> 
+    </form>
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

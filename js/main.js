@@ -41,7 +41,7 @@
   }
     
   addBtn.addEventListener('click', () => {
-    let todo = {
+    const todo = {
       task: todoTask.value,
       status: '作業中',    
     }

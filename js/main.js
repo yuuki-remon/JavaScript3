@@ -18,26 +18,41 @@
       
       taskTd.textContent =  todo.task;
       tr.appendChild(taskTd);
-      console.log(todo.task);
       
       input.type = 'button';
       input.value = todo.status;
       workingTd.appendChild(input);
       tr.appendChild(workingTd);
       
-      createDeleteBtn(tr);
+      createTrashBtn(tr, index);
       
       tbody.appendChild(tr);
     });
   }
     
-  function createDeleteBtn(tr) {
-    const td = document.createElement('td');
+  function createTrashBtn(tr, index) {
+    const trashTd = document.createElement('td');
     const trash = document.createElement('input');
     trash.type = 'button';
     trash.value = '削除';
-    td.appendChild(trash);
-    tr.appendChild(td);
+    trashTd.appendChild(trash);
+    
+    removeTodo(trashTd, index);
+    
+    tr.appendChild(trashTd);
+  }
+
+  function removeTodo(trashTd, index) {
+    trashTd.addEventListener('click', () => {
+      console.log(index);
+      todos.splice(index, 1);
+      
+      while(tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+      }
+      
+      displayTodos();
+    });
   }
     
   addBtn.addEventListener('click', () => {

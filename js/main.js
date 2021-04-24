@@ -10,7 +10,7 @@
       const tr = document.createElement('tr');
       const idTd = document.createElement('td');
       const taskTd = document.createElement('td');
-      const workingTd = document.createElement('td');
+      const statusTd = document.createElement('td');
       const input = document.createElement('input');
       
       idTd.textContent = index;
@@ -21,8 +21,8 @@
       
       input.type = 'button';
       input.value = todo.status;
-      workingTd.appendChild(input);
-      tr.appendChild(workingTd);
+      statusTd.appendChild(input);
+      tr.appendChild(statusTd);
       
       createTrashBtn(tr, index);
       
@@ -59,7 +59,8 @@
     const todo = {
       task: todoTask.value,
       status: '作業中',    
-    }
+    };
+
     if (!todoTask.value) {
       alert('入力してください');
       return;

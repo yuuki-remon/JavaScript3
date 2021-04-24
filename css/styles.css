@@ -1,0 +1,8 @@
+input[type="button"]:hover {
+  cursor:pointer;
+}
+
+input[type="button"]:active {
+  background:rgb(38, 93, 175);
+  color:#fff;
+}
